@@ -2740,9 +2740,6 @@ input[type="button"].btn-block {
   .site-logo.visible-mobile {
     display: inline-block;
   }
-  .site-logo img {
-    max-width: 42px;
-  }
 }
 
 @media screen and (max-width: 360px) {
