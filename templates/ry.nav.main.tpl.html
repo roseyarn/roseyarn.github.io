@@ -9,21 +9,21 @@
 
 <!-- Main Navigation -->
 <!-- Control the position of navigation via modifier classes: "text-left, text-center, text-right" -->
-<nav class="main-navigation">
+<nav id="main-navigation" class="main-navigation">
     <ul class="menu">
-        <li ui-sref-active="current-menu-item"><a href="/">Home</a></li>
-        <li ui-sref-active="current-menu-item"><a ui-sref="shop">Shop</a></li>
-        <li ui-sref-active="current-menu-item"><a ui-sref="gallery">Gallery</a></li>
-        <li ui-sref-active="current-menu-item"><a ui-sref="about">About</a></li>
-        <li ui-sref-active="current-menu-item"><a ui-sref="contact">Contacts</a></li>
-        <li ui-sref-active="current-menu-item"><a ui-sref="faq">FAQ</a></li>
+        <li ui-sref-active="current-menu-item"><a href="/" ng-click="methods.closeMenu()">Home</a></li>
+        <li ui-sref-active="current-menu-item"><a ng-click="methods.closeMenu()" ui-sref="shop">Shop</a></li>
+        <li ui-sref-active="current-menu-item"><a ng-click="methods.closeMenu()" ui-sref="gallery">Gallery</a></li>
+        <li ui-sref-active="current-menu-item"><a ng-click="methods.closeMenu()" ui-sref="about">About</a></li>
+        <li ui-sref-active="current-menu-item"><a ng-click="methods.closeMenu()" ui-sref="contact">Contacts</a></li>
+        <li ui-sref-active="current-menu-item"><a ng-click="methods.closeMenu()" ui-sref="faq">FAQ</a></li>
     </ul><!-- .menu -->
 </nav><!-- .main-navigation -->
 
 <!-- Toolbar -->
 <div class="toolbar">
     <div class="inner">
-        <a href="#" class="mobile-menu-toggle"><i class="material-icons menu"></i></a>
+        <a ng-click="methods.toggleMenu()" id="mobile-menu-toggle" class="mobile-menu-toggle"><i class="material-icons menu"></i></a>
         <a ui-sref="account"><i class="material-icons person"></i></a>
         <div class="cart-btn">
             <a ui-sref="shopping-cart">
