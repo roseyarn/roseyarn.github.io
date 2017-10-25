@@ -6,67 +6,27 @@
 <a href="/" class="site-logo visible-mobile">
     <img src="images/logo.png">
 </a><!-- site-logo.visible-mobile -->
+<div class="lang-switcher">
+    <div class="lang-toggle">
+        <img ng-src="{{languages[locale].icon}}" alt="{{languages[locale].alt}}">
+        <i class="material-icons arrow_drop_down" style="color: white"></i>
+        <ul class="lang-dropdown">
+            <li ng-repeat="lang in languages | toArray | filter:{$key: '!' + locale}">
+                <a data-href="#" ng-click="methods.changeLanguage(lang.$key)"><img ng-src="{{lang.icon}}" alt="{{lang.alt}}">{{lang.$key}}</a>
+            </li>
+        </ul>
+    </div>
+</div>
 
 <!-- Main Navigation -->
 <!-- Control the position of navigation via modifier classes: "text-left, text-center, text-right" -->
 <nav id="main-navigation" class="main-navigation">
     <ul class="menu">
-        <li ui-sref-active="current-menu-item"><a href="/" ng-click="methods.closeMenu()">Home</a></li>
-        <li ui-sref-active="current-menu-item"><a ng-click="methods.closeMenu()" ui-sref="shop">Shop</a></li>
-        <li ui-sref-active="current-menu-item"><a ng-click="methods.closeMenu()" ui-sref="gallery">Gallery</a></li>
-        <li ui-sref-active="current-menu-item"><a ng-click="methods.closeMenu()" ui-sref="about">About</a></li>
-        <li ui-sref-active="current-menu-item"><a ng-click="methods.closeMenu()" ui-sref="contact">Contacts</a></li>
-        <li ui-sref-active="current-menu-item"><a ng-click="methods.closeMenu()" ui-sref="faq">FAQ</a></li>
+        <li ui-sref-active="current-menu-item"><a ng-click="methods.closeMenu()" ui-sref="root.home" ng-bind="text[locale].home">Home</a></li>
+        <li ui-sref-active="current-menu-item"><a ng-click="methods.closeMenu()" ui-sref="root.shop" ng-bind="text[locale].shop">Shop</a></li>
+        <li ui-sref-active="current-menu-item"><a ng-click="methods.closeMenu()" ui-sref="root.gallery" ng-bind="text[locale].gallery">Gallery</a></li>
+        <li ui-sref-active="current-menu-item"><a ng-click="methods.closeMenu()" ui-sref="root.about" ng-bind="text[locale].about">About</a></li>
+        <li ui-sref-active="current-menu-item"><a ng-click="methods.closeMenu()" ui-sref="root.contact" ng-bind="text[locale].contacts">Contacts</a></li>
+        <li ui-sref-active="current-menu-item"><a ng-click="methods.closeMenu()" ui-sref="root.faq" ng-bind="text[locale].faq">FAQ</a></li>
     </ul><!-- .menu -->
 </nav><!-- .main-navigation -->
-
-<!-- Toolbar -->
-<div class="toolbar">
-    <div class="inner">
-        <a ng-click="methods.toggleMenu()" id="mobile-menu-toggle" class="mobile-menu-toggle"><i class="material-icons menu"></i></a>
-        <a ui-sref="account"><i class="material-icons person"></i></a>
-        <div class="cart-btn">
-            <a ui-sref="shopping-cart">
-                <i>
-                    <span class="material-icons shopping_basket"></span>
-                    <span class="count">2</span>
-                </i>
-            </a>
-            <!-- Cart Dropdown -->
-            <div class="cart-dropdown">
-                <div class="cart-item">
-                    <a ui-sref="detail" class="item-thumb">
-                        <img src="images/cart/item01.jpg" alt="Item">
-                    </a>
-                    <div class="item-details">
-                        <h3 class="item-title"><a ui-sref="detail">Concrete Lamp</a></h3>
-                        <h4 class="item-price">1 x $85.90</h4>
-                    </div>
-                    <a href="#" class="close-btn">
-                        <i class="material-icons close"></i>
-                    </a>
-                </div><!-- .cart-item -->
-                <div class="cart-item">
-                    <a ui-sref="detail" class="item-thumb">
-                        <img src="images/cart/item02.jpg" alt="Item">
-                    </a>
-                    <div class="item-details">
-                        <h3 class="item-title"><a ui-sref="detail">Storage Box</a></h3>
-                        <h4 class="item-price">2 x $38.00</h4>
-                    </div>
-                    <a href="#" class="close-btn">
-                        <i class="material-icons close"></i>
-                    </a>
-                </div><!-- .cart-item -->
-                <div class="cart-subtotal">
-                    <div class="column">
-                        <span>Subtotal:</span>
-                    </div>
-                    <div class="column">
-                        <span class="amount">$161.90</span>
-                    </div>
-                </div>
-            </div><!-- .cart-dropdown -->
-        </div><!-- .cart-btn -->
-    </div><!-- .inner -->
-</div><!-- .toolbar -->

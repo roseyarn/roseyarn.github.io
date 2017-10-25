@@ -60,7 +60,7 @@ html {
 }
 
 body {
-  font-family: "Work Sans", Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 1.5;
@@ -2696,12 +2696,11 @@ input[type="button"].btn-block {
 
 .navbar.navbar-sticky {
   position: fixed;
-  border-bottom: 1px solid #dedede;
 }
 
 .navbar.navbar-sticky + * {
-  margin-top: 80px;
-rgba(62, 98, 143);
+  margin-top: 70px;
+  rgba(62, 98, 143);
 }
 
 .site-logo {
